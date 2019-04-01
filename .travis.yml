@@ -5,14 +5,12 @@ python:
   - "3.3"
   - "3.5"
   - "3.6"
-  - "3.7"
   - "nightly"
 
 install:
   - pip install -r requirements-test.txt
 
 script: coverage run run_tests.py && coverage report -m
-
 
 after_success:
   - codecov
