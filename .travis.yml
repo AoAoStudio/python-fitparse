@@ -11,9 +11,8 @@ python:
 install:
   - pip install -r requirements-test.txt
 
-script:
-  - python -m coverage run run_tests.py
-  - python -m coverage report -m 2>&1
+script: coverage run run_tests.py && coverage report -m
+
 
 after_success:
-  coveralls
+  - codecov
